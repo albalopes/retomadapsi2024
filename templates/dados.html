@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='estilo.css')}}">
+</head>
+<body>
+    <h2>Cadastro de novos alunos</h2>
+    <img src="{{url_for('static', filename='escola.jpg')}}" class="imagem">
+
+    <ul>
+        <li>{{nome}}</li>
+    </ul>
+
+    <form action="{{url_for('recebedados')}}" method="post">
+        Nome: <input type="text" name="nome"><br>
+        Sobrenome: <input type="text" name="sobrenome"><br>
+
+        Estado: <select name="estado">
+            <option value="RN"> Rio Grande do Norte </option>
+            <option value="PB"> Paraíba </option>
+            <option value="PE"> Pernambuco</option>
+            <option value="CE"> Ceará </option>
+        </select> <br>
+
+        Ano que está cursando: 
+        <input type="radio" value="1" name="ano">1º ano
+        <input type="radio" value="2" name="ano">2º ano
+        <input type="radio" value="3" name="ano">3º ano
+        <input type="radio" value="4" name="ano">4º ano<br>
+
+        Disciplinas:
+        <input type="checkbox" value="PSI" name="disciplinas">PSI<br>
+        <input type="checkbox" value="Português" name="disciplinas">Português<br>
+        <input type="checkbox" value="Matemática" name="disciplinas">Matemática<br>
+        <input type="checkbox" value="História" name="disciplinas">História<br>
+        <input type="checkbox" value="Geografia" name="disciplinas">Geografia<br>
+        <input type="checkbox" value="Banco de dados" name="disciplinas">Banco de dados<br>
+        
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
