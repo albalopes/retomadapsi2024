@@ -57,3 +57,8 @@ def arearestrita():
 @app.route('/acessonegado')
 def acessonegado():
     return render_template('acessonegado.html')
+
+
+@app.route('/verificaridade2/<int:idade>')
+def verificaridade2(idade):
+    return render_template('verificaridade2.html', idade=idade)
