@@ -46,9 +46,9 @@ def verificarlogin():
     senha = request.form['senha']
 
     if usuario == 'alba' and senha=='12345':
-        return 'Bem vindo(a)' + usuario + '!'
+        return render_template('arearestrita.html', usuario=usuario)
     else:
-        return 'Dados incorretos'
+        return render_template('acessonegado.html')
 
 
 
