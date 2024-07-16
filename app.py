@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -46,9 +46,14 @@ def verificarlogin():
     senha = request.form['senha']
 
     if usuario == 'alba' and senha=='12345':
-        return render_template('arearestrita.html', usuario=usuario)
+        return redirect(url_for('arearestrita'))
     else:
-        return render_template('acessonegado.html')
+        return redirect(url_for('acessonegado'))
 
+@app.route('/arearestrita')
+def arearestrita():
+    return render_template('arearestrita.html')
 
-
+@app.route('/acessonegado')
+def acessonegado():
+    return render_template('acessonegado.html')
