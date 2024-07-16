@@ -26,3 +26,13 @@ def verificaridade(idade):
         return 'Você tem' + str(idade) + '. Você é MAIOR de idade'
     else:
         return 'Você tem' + str(idade) + '. Você é MENOR de idade'
+
+@app.route('/situacaofinal/<float:nota>')
+def situacaofinal(nota):
+    if nota >= 6.0:
+        return 'Você está aprovado'
+    elif nota >= 3.0:
+        return 'Você está em recuperação'
+    else:
+        return 'Você está reprovado'
+    
