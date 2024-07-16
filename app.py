@@ -62,3 +62,16 @@ def acessonegado():
 @app.route('/verificaridade2/<int:idade>')
 def verificaridade2(idade):
     return render_template('verificaridade2.html', idade=idade)
+
+@app.route('/listadecompras')
+def listadecompras():
+    return render_template('listadecompras.html')
+
+@app.route('/recebeitens', methods=['POST'])
+def recebeitens():
+    itens = request.form.getlist("item")
+    for i in itens:
+        print(i)
+    
+    return render_template('itens.html', itens=itens)
+
