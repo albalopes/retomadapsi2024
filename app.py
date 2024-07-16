@@ -19,3 +19,10 @@ def recebedados():
     disciplinas = request.form.getlist('disciplinas')
     return render_template('recebedados.html', nome=nome, sobrenome=sobrenome, estado=estado, ano=ano, disciplinas=disciplinas)
 
+
+@app.route('/verificaridade/<int:idade>')
+def verificaridade(idade):
+    if idade >= 18:
+        return 'Você é MAIOR de idade'
+    else:
+        return 'Você é MENOR de idade'
