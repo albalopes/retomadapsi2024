@@ -35,4 +35,20 @@ def situacaofinal(nota):
         return 'Você está em recuperação'
     else:
         return 'Você está reprovado'
-    
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/verificarlogin', methods=['POST'])
+def verificarlogin():
+    usuario = request.form['usuario']
+    senha = request.form['senha']
+
+    if usuario == 'alba' and senha=='12345':
+        return 'Bem vindo(a)' + usuario + '!'
+    else:
+        return 'Dados incorretos'
+
+
+
