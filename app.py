@@ -23,6 +23,6 @@ def recebedados():
 @app.route('/verificaridade/<int:idade>')
 def verificaridade(idade):
     if idade >= 18:
-        return 'Você é MAIOR de idade'
+        return 'Você tem' + str(idade) + '. Você é MAIOR de idade'
     else:
-        return 'Você é MENOR de idade'
+        return 'Você tem' + str(idade) + '. Você é MENOR de idade'
